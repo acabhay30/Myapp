@@ -38,9 +38,12 @@ echo ""
 echo "🔨 Building debug APK..."
 
 # Clean and build debug APK
+echo "   Running: ./gradlew clean"
 ./gradlew clean
 if [ $? -ne 0 ]; then
     echo "❌ Clean failed"
+    echo "   This might be normal if you don't have Android SDK installed"
+    echo "   Use Android Studio to build instead"
     exit 1
 fi
 
